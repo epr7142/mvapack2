@@ -14,17 +14,16 @@
 ## You should have received a copy of the GNU General Public License
 ## along with this program; If not, see <http://www.gnu.org/licenses/>.
 
-%Want to remove numbers from final functions. Succinctness.
 ## -*- texinfo -*-
-## @anchor{qnorm1}
-## @deftypefn {Function File} {@var{Xn} =} qnorm1 (@var{X})}
+## @anchor{qnorm}
+## @deftypefn {Function File} {@var{Xn} =} qnorm (@var{X})
 ## Normalize the observations of a data matrix using quantile normalization (qnorm).
 ## @end deftypefn
 
-function [Xnorm] = qnorm1(matrix);
-
-# Can we add argument checking?
-
+function [Xnorm] = qnorm(matrix)
+if (nargin !=1 || nargout != 1)
+  print_usage();
+endif
 
 # check the size of matrix
 dim = size(matrix);
